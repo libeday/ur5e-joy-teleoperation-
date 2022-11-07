@@ -1,0 +1,28 @@
+<launch>
+ <!-- joy node -->
+  <node respawn="true" pkg="joy"
+        type="joy_node" name="ur_joy" >
+    <param name="dev" type="string" value="/dev/input/js2" />
+    <param name="deadzone" value="0.1" />
+    <param name="autorepeat_rate" type="double" value="125" />
+    <param name="default_trig_val" type="bool" value="true" />
+
+
+  </node>
+
+ <!-- Axes -->
+  <param name="axis_x" value="1" type="int"/>
+  <param name="axis_y" value="0" type="int"/>
+  <param name="axis_z_up" value="4" type="int"/>
+  <param name="axis_z_dwn" value="5" type="int"/>
+  <param name="axis_rz" value="4" type="int"/>
+  <param name="axis_rx" value="2" type="int"/>
+  <param name="axis_ry" value="3" type="int"/>
+  <param name="scale_x" value="0.3" type="double"/>
+  <param name="scale_y" value="0.3" type="double"/>
+  <param name="scale_z" value="0.3" type="double"/>
+  <param name="scale_rot" value="0.5" type="double"/>
+  <param name="ROBOT_IP" value="'192.168.56.102'" type="string"/>
+  <node pkg="rtde_driver" type="telejoy" name="telejoy"/>
+  
+</launch>
